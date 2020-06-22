@@ -1,85 +1,24 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        movies
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="container mx-auto mt-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <card v-for="movie in movies" :key="movie.id" :id="movie.id">
+        <img
+          :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+          :alt="movie.title"
+          class="inline sm:block"
+        />
+        <template #footer>
+          <p class="text-white py-4">{{ movie.title }}</p>
+        </template>
+      </card>
     </div>
+    <button
+      @click="loadMoreMovie"
+      class="w-full bg-gray-800 grid-cols-1 my-5 py-5 bg-teal-500 hover:bg-teal-700 cursor-pointer"
+    >
+      <p class="text-white text-center uppercase">Load More Movies</p>
+    </button>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
-
-export default Vue.extend({
-  components: {
-    Logo
-  }
-})
-</script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<script lang="ts" src="./index.ts"></script>

@@ -1,0 +1,9 @@
+.form-container {
+  @apply flex items-center border-b border-b-2 border-teal-500 py-2;
+}
+.form-input {
+  @apply appearance-none bg-transparent border-none w-full text-gray-100 mr-3 py-1 px-2 leading-tight;
+}
+.btn-show {
+  @apply flex-shrink-0 border-transparent border-4 text-teal-500  text-sm py-1 px-2 rounded;
+}

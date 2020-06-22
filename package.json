@@ -9,10 +9,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.13.0"
+    "axios": "^0.19.2",
+    "nuxt": "^2.13.0",
+    "nuxt-composition-api": "^0.9.3",
+    "vuex-module-decorators": "^0.17.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^1.0.3",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
