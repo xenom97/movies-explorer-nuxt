@@ -16,8 +16,16 @@
         <div class="bg-gray-800 mt-2 shadow-md p-3">
           <h1 class="text-white text-2xl">{{movie.title}}</h1>
           <p class="text-gray-600">Release date : {{movie.release_date}}</p>
+          <div class="flex">
+            <span
+              v-for="genre in movie.genres"
+              :key="genre.id"
+              class="text-white mr-1 bg-teal-900 p-1"
+            >{{genre.name}}</span>
+          </div>
         </div>
         <div class="bg-gray-800 mt-2 shadow-md p-3">
+          <p class="text-white text-xl">Overview :</p>
           <p class="text-white">{{movie.overview}}</p>
         </div>
       </div>
